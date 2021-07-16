@@ -1,9 +1,11 @@
 // Global Variables //
 
 var quiz = document.getElementById("quiz-container");
-var results = document.getElementById("results");
+var results = [];
 var getResultsbutton = document.getElementById("get-results");
 var onQuestion = 0;
+var timer;
+var slideshows = document.querySelector
 
 // Quiz Questions //
 
@@ -34,3 +36,5 @@ var quizQuestions = [
         correct: 1
     }
 ];
+
+

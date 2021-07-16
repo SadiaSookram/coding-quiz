@@ -5,6 +5,10 @@
 --tertiary: #D2FBA4;
 
 }
+
+body {
+    background-color: var(--Secondary);
+}
 title {
    font-family: Georgia, 'Times New Roman', Times, serif; 
 }
@@ -30,7 +34,7 @@ nav {
     color:var(--Secondary);
     float: right;
     display: flex;
-    margin-left: 450px;
+    margin-left: 400px;
 
 }
 
@@ -42,6 +46,7 @@ nav {
     background-color: var(--Primary);
     border-radius: 30px;
     max-width: 800px;
+    box-shadow: 0 0 15px 4px;
     
 }
 
