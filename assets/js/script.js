@@ -7,6 +7,7 @@ var score = 0;
 var results= [];
 var onQuestion = 0;
 var answers = [];
+var timeLeft= 500;
 // Quiz Questions //
 
 var quizQuestions = [
@@ -51,9 +52,6 @@ var next = document.getElementById("nextButton");
 
 // Creating quiz function
 function quizExecute () {
-
-    //Start timer
-     timeLeft = 500;
     
    // Display question from array
     document.getElementById("quizcontent").innerHTML
@@ -79,20 +77,31 @@ function quizExecute () {
     document.getElementById("choices").appendChild(choices)
     // Increment question to display next question
 onQuestion++
-   
 } 
+
+//Check answer Function
+var correctAnswers = function(event) {
+    var userInput = event.getElementById("choices")
+    console.log(userInput);
+    if (userInput === quizQuestions[i]["correct"]) {
+        score++;
+    } else {
+        timeLeft -= 10;
+    }
+}
+
 // Adding timer through quiz
 
 function quizTimer() {
     
-    timeLeft = timeLeft - 1;
+     timeLeft = timeLeft - 1;
     if (timeLeft < 500) {
         timerSeconds.innerHTML = timeLeft;
     }
     if (timeLeft < 1) {
        window.clearInterval(update);
        window.alert ("Times up !");
-    
+       
  }
 };
 update = setInterval("quizTimer()" , 1000)
