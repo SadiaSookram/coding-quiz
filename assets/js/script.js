@@ -7,7 +7,7 @@ var timeLeft = 500;
 var score = 0;
 var results= [];
 var onQuestion = 0;
-var answers = 0;
+var answers = [0,1,2,3];
 // Quiz Questions //
 
 var quizQuestions = [
@@ -45,6 +45,7 @@ console.log(quizQuestions[2]);
 console.log(quizQuestions[3]);
 console.log(quizQuestions[4]);
 
+
 // Adding timer through quiz
 
 function quizTimer() {
@@ -64,11 +65,27 @@ var next = document.getElementById("nextButton")
 // Creating quiz function
 function quizExecute () {
 
-    // Display question from array
+   // Display question from array
     document.getElementById("quizcontent").innerHTML
      = quizQuestions[onQuestion].question
+     
     // create buttons for answer choices
-  
+    var choices = document.createElement("button");
+    choices.innerHTML = quizQuestions[onQuestion].answers[0];
+    document.getElementById("choices").appendChild(choices)
+
+    var choices = document.createElement("button");
+    choices.innerHTML = quizQuestions[onQuestion].answers[1];
+    document.getElementById("choices").appendChild(choices)
+
+    var choices = document.createElement("button");
+    choices.innerHTML = quizQuestions[onQuestion].answers[2];
+    document.getElementById("choices").appendChild(choices)
+
+    var choices = document.createElement("button");
+    choices.innerHTML = quizQuestions[onQuestion].answers[3];
+    document.getElementById("choices").appendChild(choices)
+
 } 
 
     

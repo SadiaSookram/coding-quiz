@@ -55,6 +55,18 @@ nav {
     
 }
 
+#choices button {
+    margin:25px;
+    font-size: 10px;
+    font-weight: 700;
+    background-color: var(--tertiary) ;
+    padding: 15px 20px;
+    border-radius: 15px;
+    text-align: center;
+    display: flex;
+    text-decoration: none;
+}
+
 #quizcontent {
     font-family: sans-serif;
     text-align: center;
@@ -73,7 +85,7 @@ nav {
 
 .next , .get-results {
     margin:auto;
-    font-size: 13px;
+    font-size: 18px;
     font-weight: 700;
     background-color: var(--tertiary) ;
     padding: 15px 20px;
