@@ -59,7 +59,7 @@ nav {
     color: var(--Secondary);
 }
 
-.continue-button , .get-results {
+.next , .get-results {
     margin:auto;
     font-size: 13px;
     font-weight: 700;

@@ -51,21 +51,17 @@ function quizTimer() {
 }
 update = setInterval("quizTimer()" , 1000)
 
-// if the user selets next fun the quiz 
-
+// if the user selets next run the quiz 
+var quiz = document.getElementById("heading");
 
 // For loop through questions 
  for(var i=0; i < quizQuestions.length; i++ ) {
-     var input = (quizQuestions[i].quiz);
-     var quizDisplay = document.getElementById("quiz-container");
+ 
 
-     div.innerHTML += "Quiz"
-
-    // Check if answer user gives is correct 
-    if(input === quizQuestions [i].answer) {
-    score++;
- }
 }
+     
+
+    
  
 
 
