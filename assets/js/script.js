@@ -7,7 +7,7 @@ var timeLeft = 500;
 var score = 0;
 var results= [];
 var onQuestion = 0;
-var answers = [0,1,2,3];
+var answers = [];
 // Quiz Questions //
 
 var quizQuestions = [
@@ -18,13 +18,13 @@ var quizQuestions = [
         
     },
     {
-        question: "What is the <Title> tag used for ?",
+        question: "What is the Title tag used for ?",
         answers: ["Write in Nav bar", "Input page Title", "As a comment in code", "To copyright the page"],
         correct: 2
     },
     {
-        question: "Which is the correct closing tag for this <div> tag ?",
-        answers: ["</div>", "<div/>", "<div>/", "/<div>"],
+        question: "Where do you add button functions ?",
+        answers: [ "Jave","JavaScript", "HTML", "CSS"],
         correct: 1
     },
     {
@@ -68,7 +68,7 @@ function quizExecute () {
    // Display question from array
     document.getElementById("quizcontent").innerHTML
      = quizQuestions[onQuestion].question
-     
+
     // create buttons for answer choices
     var choices = document.createElement("button");
     choices.innerHTML = quizQuestions[onQuestion].answers[0];
@@ -86,6 +86,7 @@ function quizExecute () {
     choices.innerHTML = quizQuestions[onQuestion].answers[3];
     document.getElementById("choices").appendChild(choices)
 
+onQuestion++
 } 
 
     
