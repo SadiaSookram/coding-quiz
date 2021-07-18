@@ -3,7 +3,6 @@
 var quiz = document.getElementById("quiz-container");
 var getResultsbutton = document.getElementById("get-results");
 var timer  = document.getElementById("timer")
-var timeLeft = 500;
 var score = 0;
 var results= [];
 var onQuestion = 0;
@@ -46,29 +45,22 @@ console.log(quizQuestions[3]);
 console.log(quizQuestions[4]);
 
 
-// Adding timer through quiz
-
-function quizTimer() {
-    timeLeft = timeLeft - 1;
-    if (timeLeft < 500) {
-        timerSeconds.innerHTML = timeLeft;
-    }
-    if (timeLeft < 1) {
-       timerSecondswindow.clearInterval(update);
- }
-}
-update = setInterval("quizTimer()" , 1000)
-
 // if the user selets next run the quiz 
 var quiz = document.getElementById("quizcontent");
-var next = document.getElementById("nextButton")
+var next = document.getElementById("nextButton");
+
 // Creating quiz function
 function quizExecute () {
 
+    //Start timer
+     timeLeft = 500;
+    
    // Display question from array
     document.getElementById("quizcontent").innerHTML
      = quizQuestions[onQuestion].question
 
+   // Clear out dive once function is ran again
+     document.getElementById("choices").innerHTML = ""
     // create buttons for answer choices
     var choices = document.createElement("button");
     choices.innerHTML = quizQuestions[onQuestion].answers[0];
@@ -85,10 +77,25 @@ function quizExecute () {
     var choices = document.createElement("button");
     choices.innerHTML = quizQuestions[onQuestion].answers[3];
     document.getElementById("choices").appendChild(choices)
-
+    // Increment question to display next question
 onQuestion++
+   
 } 
+// Adding timer through quiz
 
+function quizTimer() {
+    
+    timeLeft = timeLeft - 1;
+    if (timeLeft < 500) {
+        timerSeconds.innerHTML = timeLeft;
+    }
+    if (timeLeft < 1) {
+       window.clearInterval(update);
+       window.alert ("Times up !");
+    
+ }
+};
+update = setInterval("quizTimer()" , 1000)
     
 
      
