@@ -26,15 +26,18 @@ nav {
     color:var(--Secondary);
     float:left;
     display: flex;
+    
    
-
 }
 
-#timer h3 {
+#timer  {
     color:var(--Secondary);
     float: right;
     display: flex;
     margin-left: 400px;
+    border: 25px;
+    background-color: #94c973;
+    font: bold;
 
 }
 

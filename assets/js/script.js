@@ -1,11 +1,12 @@
 // Global Variables //
 
 var quiz = document.getElementById("quiz-container");
-var results = [];
 var getResultsbutton = document.getElementById("get-results");
 var onQuestion = 0;
-var timer;
-var slideshows = document.querySelector
+var timer  = document.getElementById("timer")
+var timeLeft = 500;
+var score = 0;
+var results= [];
 
 // Quiz Questions //
 
@@ -36,5 +37,40 @@ var quizQuestions = [
         correct: 1
     }
 ];
+
+// Adding timer through quiz
+
+function quizTimer() {
+    timeLeft = timeLeft - 1;
+    if (timeLeft < 500) {
+        timerSeconds.innerHTML = timeLeft;
+    }
+    if (timeLeft < 1) {
+       timerSecondswindow.clearInterval(update);
+ }
+}
+update = setInterval("quizTimer()" , 1000)
+
+// if the user selets next fun the quiz 
+
+
+// For loop through questions 
+ for(var i=0; i < quizQuestions.length; i++ ) {
+     var input = (quizQuestions[i].quiz);
+     var quizDisplay = document.getElementById("quiz-container");
+
+     div.innerHTML += "Quiz"
+
+    // Check if answer user gives is correct 
+    if(input === quizQuestions [i].answer) {
+    score++;
+ }
+}
+ 
+
+
+
+
+
 
 
