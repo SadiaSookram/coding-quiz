@@ -19,6 +19,7 @@ nav {
    background-color: var(--tertiary); 
    vertical-align: middle;  
    display:flex;
+   margin-bottom: 55px;
 
 }
 
@@ -34,10 +35,11 @@ nav {
     color:var(--Secondary);
     float: right;
     display: flex;
-    margin-left: 400px;
     border: 25px;
     background-color: #94c973;
     font: bold;
+    margin: 15px;
+    font-size: 29px;
 
 }
 
@@ -45,7 +47,7 @@ nav {
 #quiz-container {
     width:65%;
     margin:auto;
-    padding: 0 35px 55px 15px;
+    padding: 0 55px 75px 25px;
     background-color: var(--Primary);
     border-radius: 30px;
     max-width: 800px;
@@ -53,11 +55,21 @@ nav {
     
 }
 
-#heading {
+#quizcontent {
     font-family: sans-serif;
     text-align: center;
     color: var(--Secondary);
+    font-size: 31px;
 }
+
+#quizcontent h3 {
+    font-family: sans-serif;
+    text-align: center;
+    color: var(--Secondary);
+    font-size: 25px;
+    font-weight: bolder;
+}
+
 
 .next , .get-results {
     margin:auto;

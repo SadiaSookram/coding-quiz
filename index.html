@@ -21,17 +21,18 @@
 </nav>
 <!--Box contaier for questions -->
  <div id="quiz-container">
-     <div id=heading>
+     <div id=quizcontent>
          <h2><strong>Welcome to the Coding Quiz!</strong></h2>
-         <h3>Try to answer the code related questions 
+         <h3 id=contentbox>Try to answer the code related questions 
          within the time limit.</br> Keep in mind that each inccorect </br>
          answer will be penalized with a reduction of your time left 
          by 10 seconds!</br> </br> Good Luck!
         </h3>
          </div>
+         
 <!--Buttons-->
   <div class="Buttons">
-      <button class="next">Next</button>
+      <button onclick="quizExecute()" class="next" id=nextButton>Next</button>
   </div>
   <div class="Buttons">
     <button class="get-results">Get Results</button>
