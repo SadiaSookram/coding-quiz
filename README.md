@@ -14,7 +14,7 @@ Welcome to the Coding Quiz , Whithin this interactive user site you will be taki
 
 ## Preview
 
-![Preview](./images/screenshot.PNG)
+![Preview](./assets/images/screenshot.PNG)
 
 ## Contribution 
 Made by Sadia Sookram 🍃
