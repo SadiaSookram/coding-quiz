@@ -8,6 +8,7 @@ var results= [];
 var onQuestion = 0;
 var answers = [];
 var timeLeft= 500;
+
 // Quiz Questions //
 
 var quizQuestions = [
@@ -63,27 +64,33 @@ function quizExecute () {
     var choices = document.createElement("button");
     choices.innerHTML = quizQuestions[onQuestion].answers[0];
     document.getElementById("choices").appendChild(choices)
+    
 
     var choices = document.createElement("button");
     choices.innerHTML = quizQuestions[onQuestion].answers[1];
     document.getElementById("choices").appendChild(choices)
+    
 
     var choices = document.createElement("button");
     choices.innerHTML = quizQuestions[onQuestion].answers[2];
     document.getElementById("choices").appendChild(choices)
+    
 
     var choices = document.createElement("button");
     choices.innerHTML = quizQuestions[onQuestion].answers[3];
     document.getElementById("choices").appendChild(choices)
+    
+
     // Increment question to display next question
 onQuestion++
 } 
 
 //Check answer Function
-var correctAnswers = function(event) {
-    var userInput = event.getElementById("choices")
-    console.log(userInput);
-    if (userInput === quizQuestions[i]["correct"]) {
+var correctAnswers = function() {
+    var userInput = document.getElementById("choices");
+    var userAns = userInput.value.trim();
+    console.log(userAns);
+    if (userAns === quizQuestions[i]["correct"]) {
         score++;
     } else {
         timeLeft -= 10;
