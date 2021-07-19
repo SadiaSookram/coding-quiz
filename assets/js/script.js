@@ -79,22 +79,18 @@ function quizExecute () {
         console.log(choices)
 }
     )};
-     
     // Increment question to display next question
 onQuestion++
 }};
 
-
-
-
 //Check answer Function
-var correctAnswers = function() {
-
-    if(answerChoice === true ){
+function correctAnswers () {
+  if( choices === [quizQuestions].correct){
      score++;
+     console.log(score)
 } else {
     timeLeft -= 10;
-
+    
 } 
 }
 // Adding timer through quiz
