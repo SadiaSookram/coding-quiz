@@ -85,18 +85,6 @@ function quizExecute () {
 onQuestion++
 } 
 
-//Check answer Function
-var correctAnswers = function() {
-    var userInput = document.getElementById("choices");
-    var userAns = userInput.value.trim();
-    console.log(userAns);
-    if (userAns === quizQuestions[i]["correct"]) {
-        score++;
-    } else {
-        timeLeft -= 10;
-    }
-}
-
 // Adding timer through quiz
 
 function quizTimer() {
