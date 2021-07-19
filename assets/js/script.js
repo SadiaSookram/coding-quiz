@@ -51,40 +51,41 @@ console.log(quizQuestions[4]);
 var quiz = document.getElementById("quizcontent");
 var next = document.getElementById("nextButton");
 
+
 // Creating quiz function
 function quizExecute () {
+    if (onQuestion >= quizQuestions.length){
+     window.alert("End of Quiz!")
+     return score 
+    }else{
     
+    console.log(onQuestion);
    // Display question from array
     document.getElementById("quizcontent").innerHTML
      = quizQuestions[onQuestion].question
-
+    
    // Clear out dive once function is ran again
      document.getElementById("choices").innerHTML = ""
     // create buttons for answer choices
+    for (var i =0; i < 4 ; i++){
     var choices = document.createElement("button");
-    choices.innerHTML = quizQuestions[onQuestion].answers[0];
-    document.getElementById("choices").appendChild(choices)
-    
-
-    var choices = document.createElement("button");
-    choices.innerHTML = quizQuestions[onQuestion].answers[1];
-    document.getElementById("choices").appendChild(choices)
-    
-
-    var choices = document.createElement("button");
-    choices.innerHTML = quizQuestions[onQuestion].answers[2];
-    document.getElementById("choices").appendChild(choices)
-    
-
-    var choices = document.createElement("button");
-    choices.innerHTML = quizQuestions[onQuestion].answers[3];
-    document.getElementById("choices").appendChild(choices)
-    
-
+    choices.setAttribute("answers", answers[i]);
+    choices.innerText = quizQuestions[onQuestion].answers[i];
+    document.getElementById("choices").appendChild(choices);
+}
     // Increment question to display next question
 onQuestion++
-} 
+}};
 
+//Check answer Function
+var correctAnswers = function() {
+    if(choices.answer === quizQuestions[0,1,2,3,4].answer){
+     score++;
+} else {
+    timeLeft -= 10;
+
+} 
+}
 // Adding timer through quiz
 
 function quizTimer() {
