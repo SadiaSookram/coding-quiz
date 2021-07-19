@@ -14,29 +14,29 @@ var timeLeft= 500;
 var quizQuestions = [
     {
         question: "What is considered the (Skeleton) of every webpage ?",
-        answers: ["CSS", "JAVASCRIPT", "HTML", "GIT"],
-        correct: 3
+        answers: ["CSS", "JAVASCRIPT", "GIT", "HTML"],
+        correct: 4
         
     },
     {
         question: "What is the Title tag used for ?",
-        answers: ["Write in Nav bar", "Input page Title", "As a comment in code", "To copyright the page"],
-        correct: 2
+        answers: ["Write in Nav bar", "To copyright the page" , "As a comment in code", "Input page Title"],
+        correct: 4
     },
     {
         question: "Where do you add button functions ?",
-        answers: [ "Jave","JavaScript", "HTML", "CSS"],
-        correct: 1
+        answers: [ "JAVA","CSS", "HTML", "JAVASCRIPT"],
+        correct: 4
     },
     {
         question: "What does the abbreviation DRY stand for ?",
-        answers: ["Do Not Rewrite Yes", "Donuts R Yummy ", "Don't Repeat Yourself", "Do Repeat Yourself"],
-        correct: 3
+        answers: ["Do Not Rewrite Yes", "Donuts R Yummy ", "Do Repeat Yourself", "Don't Repeat Yourself"],
+        correct: 4
     },
     {
         question: "What styles a webpage ?",
-        answers: ["CSS", "JAVASCRIPT", "HTML", "GIT"],
-        correct: 1
+        answers: ["GIT", "JAVASCRIPT", "HTML", "CSS"],
+        correct: 4
     }
 ];
 
@@ -68,16 +68,18 @@ function quizExecute () {
    // Clear out dive once function is ran again
      document.getElementById("choices").innerHTML = ""
     // create buttons for answer choices
-    for (var i =0; i < 4 ; i++){
+    for (var i =0; i < 4; i++){
     var choices = document.createElement("button");
     choices.setAttribute("answers", answers[i]);
     choices.innerText = quizQuestions[onQuestion].answers[i];
+    choices.className = "answerChoice"
     document.getElementById("choices").appendChild(choices);
-    
+   
+    choices.addEventListener("click" , function (){
+        console.log(choices)
 }
-     choices.addEventListener("click" , function (){
-         console.log(choices)
-     })
+    )};
+     
     // Increment question to display next question
 onQuestion++
 }};
@@ -87,7 +89,8 @@ onQuestion++
 
 //Check answer Function
 var correctAnswers = function() {
-    if(choices.answer === quizQuestions[0,1,2,3,4].answer){
+
+    if(answerChoice === true ){
      score++;
 } else {
     timeLeft -= 10;
