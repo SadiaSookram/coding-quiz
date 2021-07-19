@@ -52,6 +52,7 @@ var quiz = document.getElementById("quizcontent");
 var next = document.getElementById("nextButton");
 
 
+
 // Creating quiz function
 function quizExecute () {
     if (onQuestion >= quizQuestions.length){
@@ -72,10 +73,17 @@ function quizExecute () {
     choices.setAttribute("answers", answers[i]);
     choices.innerText = quizQuestions[onQuestion].answers[i];
     document.getElementById("choices").appendChild(choices);
+    
 }
+     choices.addEventListener("click" , function (){
+         console.log(choices)
+     })
     // Increment question to display next question
 onQuestion++
 }};
+
+
+
 
 //Check answer Function
 var correctAnswers = function() {
