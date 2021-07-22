@@ -4,11 +4,12 @@ var quiz = document.getElementById("quiz-container");
 var getResultsbutton = document.getElementById("get-results");
 var timer  = document.getElementById("timer")
 var score = 0;
-var results= [];
+var results = [];
 var onQuestion = 0;
-var answers = [];
-var timeLeft= 500;
-
+var answers = [randomNum];
+var timeLeft = 500;
+var randomNum = Math.floor(Math.random()*5)
+ 
 // Quiz Questions //
 
 var quizQuestions = [
@@ -56,7 +57,8 @@ var next = document.getElementById("nextButton");
 // Creating quiz function
 function quizExecute () {
     if (onQuestion >= quizQuestions.length){
-     window.alert("End of Quiz!")
+     window.alert("End of Quiz!");
+     window.prompt("Please enter your initials !")
      return score 
     }else{
     
@@ -67,16 +69,17 @@ function quizExecute () {
     
    // Clear out dive once function is ran again
      document.getElementById("choices").innerHTML = ""
-    // create buttons for answer choices
-    for (var i =0; i < 4; i++){
+    
+     // create buttons for answer choices
+    for (var i =0; i < 4; i++){ 
     var choices = document.createElement("button");
     choices.setAttribute("answers", answers[i]);
     choices.innerText = quizQuestions[onQuestion].answers[i];
-    choices.className = "answerChoice"
+    choices.id = "answerChoice"
     document.getElementById("choices").appendChild(choices);
    
     choices.addEventListener("click" , function (){
-        console.log(choices)
+        //console.log(choices)
 }
     )};
     // Increment question to display next question
@@ -85,7 +88,7 @@ onQuestion++
 
 //Check answer Function
 function correctAnswers () {
-  if( choices === [quizQuestions].correct){
+  if( answerChoice === [quizQuestions].correct){
      score++;
      console.log(score)
 } else {
@@ -96,7 +99,7 @@ function correctAnswers () {
 // Adding timer through quiz
 
 function quizTimer() {
-    
+    if (quizExecute === true)
      timeLeft = timeLeft - 1;
     if (timeLeft < 500) {
         timerSeconds.innerHTML = timeLeft;
@@ -104,13 +107,12 @@ function quizTimer() {
     if (timeLeft < 1) {
        window.clearInterval(update);
        window.alert ("Times up !");
+       window.prompt ("Please Enter Your initials!");
        
  }
 };
-update = setInterval("quizTimer()" , 1000)
+update = setTimeout("quizTimer()" , 1000)
     
-
-     
 
     
  

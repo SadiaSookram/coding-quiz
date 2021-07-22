@@ -96,6 +96,11 @@ nav {
     
 }
 
+#saveButton{
+    display: none;
+    
+}
+
 .get-results {
     display: none;
 }
