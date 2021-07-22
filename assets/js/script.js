@@ -7,9 +7,8 @@ var score = 0;
 var results = [];
 var onQuestion = 0;
 var answers = [randomNum];
-var timeLeft = 500;
 var randomNum = Math.floor(Math.random()*5)
- 
+var timeLeft = "-"
 // Quiz Questions //
 
 var quizQuestions = [
@@ -50,13 +49,14 @@ console.log(quizQuestions[4]);
 
 // if the user selets next run the quiz 
 var quiz = document.getElementById("quizcontent");
-var next = document.getElementById("nextButton");
-
-
+var next = document.getElementById("nextButton").addEventListener("click", quizExecute);
 
 // Creating quiz function
 function quizExecute () {
-    if (onQuestion >= quizQuestions.length){
+
+    timeLeft = 500;
+
+     if  (onQuestion >= quizQuestions.length){
      window.alert("End of Quiz!");
      window.prompt("Please enter your initials !")
      return score 
@@ -80,11 +80,14 @@ function quizExecute () {
    
     choices.addEventListener("click" , function (){
         //console.log(choices)
+        window.clearInterval(update);
+        timeLeft= ""
 }
-    )};
+ 
+)}};
     // Increment question to display next question
 onQuestion++
-}};
+};
 
 //Check answer Function
 function correctAnswers () {
@@ -93,14 +96,18 @@ function correctAnswers () {
      console.log(score)
 } else {
     timeLeft -= 10;
+    timerSeconds.innerHTML = timeLeft;
     
 } 
 }
+
+
 // Adding timer through quiz
 
 function quizTimer() {
-    if (quizExecute === true)
-     timeLeft = timeLeft - 1;
+
+    timeLeft = timeLeft - 1;
+
     if (timeLeft < 500) {
         timerSeconds.innerHTML = timeLeft;
     }
@@ -108,12 +115,14 @@ function quizTimer() {
        window.clearInterval(update);
        window.alert ("Times up !");
        window.prompt ("Please Enter Your initials!");
-       
- }
-};
-update = setTimeout("quizTimer()" , 1000)
-    
+    }
+   
+}
+update = setInterval("quizTimer()" , 1000);
 
+
+
+    
     
  
 
