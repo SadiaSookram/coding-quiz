@@ -77,9 +77,8 @@ function quizExecute () {
     choices.innerText = quizQuestions[onQuestion].answers[i];
     choices.id = "answerChoice"
     document.getElementById("choices").appendChild(choices);
-   
     choices.addEventListener("click" , function (){
-        //console.log(choices)
+        //Clear timer interval
         window.clearInterval(update);
         timeLeft= ""
 }
@@ -89,14 +88,17 @@ function quizExecute () {
 onQuestion++
 };
 
+choices.addEventListener("click",correctAnswers);
 //Check answer Function
 function correctAnswers () {
+    var timeLeft = 500;
   if( answerChoice === [quizQuestions].correct){
      score++;
      console.log(score)
 } else {
-    timeLeft -= 10;
+    timeLeft =- 0;
     timerSeconds.innerHTML = timeLeft;
+    
     
 } 
 }
